@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+<head>
+<title>Presentation</title>
+
+<meta charset='utf-8'>
+
+<script src="js/slides.js"></script>
+
+<style media="print">
+@page {
+	size: A4 landscape;
+	@
+	top-right
+	{
+	content
+	:
+	"Page "
+	counter(
+	page
+	);
+}
+
+}
+article {
+	page-break-after: always;
+	margin: auto;
+}
+
+article.next,article.past {
+	display: block;
+}
+
+body {
+	display: block !important;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 1.5em;
+}
+</style>
+<script type="text/javascript">
+        window.addEventListener('load', function(){
+            var link = document.getElementsByTagName('link');
+            link[link.length-1].setAttribute ("media","screen");
+        });
+      </script>
+</head>
+
+<style>
+/* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+.center {
+	text-align: center
+}
+
+.yanone {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+</style>
+
+<body style='display: none'>
+
+	<section class='slides layout-regular template-default'>
+
+		<!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+
+
+
+		<article class='nobackground'>
+			<h1 class="center yanone">
+				Eclipse 4 for developers, <br> cool new stuff
+			</h1>
+			<div class='source'
+				style="right: 60px; text-align: right; padding-right: 0px;">
+				<a target="_blank" href="https://twitter.com/#!/xavier_seignard">@xavier_seignard</a>
+			</div>
+
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Application model</h3>
+			<p class="center">
+				<img alt="eggPack" src="images/eggPack.jpg">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/spikeyhelen/2863860990/">http://www.flickr.com/photos/spikeyhelen/2863860990/</a>
+				by <a target="_blank"
+					href="http://www.flickr.com/photos/spikeyhelen/">spikeyhelen</a>
+			</div>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Application model</h3>
+			<ul>
+				<li>Structure of your app described by a model (i.e. Parts)</li>
+				<li>But not the content of the Part (e.g. SWT widgets)</li>
+				<li>Arrange Parts using Perspectives, Stacks and Sashes</li>
+				<li>Connect the UI part through the Class URI</li>
+			</ul>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Application model</h3>
+			<p class="center">
+				<img alt="appModel" src="images/appModel.png"
+					style="margin-top: 60px; width: 100%;">
+			</p>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Dependency Injection</h3>
+			<p class="center">
+				<img alt="injection" src="images/injection.jpg"
+					style="margin-top: 150px;">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/vculibraries/6032624966/">http://www.flickr.com/photos/vculibraries/6032624966/</a>
+				by <a target="_blank"
+					href="http://www.flickr.com/photos/vculibraries/6032624966/">VCU
+					Libraries</a>
+			</div>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Dependency Injection</h3>
+			<ul>
+				<li>POJO POJO POJO POJO POJO POJO
+					POJO POJO!!</li>
+				<li>@nnotations 
+<pre>// DI
+@Inject            @Named
+@Optional          @Preference
+// behavior @nnotations
+@PostConstruct     @PreDestroy
+@Execute           @Focus</pre>
+				</li>
+				<li>Eclipse RT injects values and maintains a context</li>
+
+				<li>Reduced <code>implements</code> and <code>extends</code>
+					usage
+				</li>
+			</ul>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Services</h3>
+			<p class="center">
+				<img alt="waiter" src="images/waiter.jpg">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/piaser/3710966362/">http://www.flickr.com/photos/piaser/3710966362/</a>
+				by <a target="_blank" href="http://www.flickr.com/photos/piaser/">Gwenaël
+					Piaser</a>
+			</div>
+		</article>
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Services</h3>
+			<ul>
+				<li>EModelService</li>
+				<li>ESelectionService</li>
+				<li>ECommandService</li>
+				<li>EHandlerService</li>
+				<li>EPartService</li>
+				<li>IEventBroker</li>
+				<li>StatusReporter</li>
+				<li>EContextService</li>
+				<li>IThemeEngine</li>
+			</ul>
+
+			<div class='source'>
+				Find out more: <a target="_blank"
+					href="http://www.vogella.com/articles/Eclipse4Services/article.html">http://www.vogella.com/articles/Eclipse4Services/article.html</a>
+				by <a target="_blank" href="http://www.twitter.com/#!/vogella">@vogella</a>
+			</div>
+		</article>
+
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Event broker</h3>
+			<p class="center">
+				<img alt="bus" src="images/bus.jpg">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/29714836@N08/2995851157/">http://www.flickr.com/photos/29714836@N08/2995851157/</a>
+				by <a target="_blank"
+					href="http://www.flickr.com/photos/29714836@N08/">curiouslypersistent</a>
+			</div>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Event broker</h3>
+			<ul>
+				<li>Publish/Subscribe pattern, with Topics (similar to <a target="_blank" href="http://mqtt.org">MQTT</a>)</li>
+				<li>Subscribe</li>
+			</ul>
+			<pre>@Inject
+private IEventBroker eventBroker;
+...
+@PostConstruct
+public void postConstruct() {
+	...
+	eventBroker.subscribe("demoCamp/nantes", new EventHandler() {
+	      public void handleEvent(final Event event) {
+	    	  // handles the event
+	    	  Object obj = event.getProperty(IEventBroker.DATA)
+	    	  ...
+	      }
+	});
+}</pre>
+		</article>
+
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Event broker</h3>
+			<ul>
+				<li style="margin-top: 60px;">Publish</li>
+			</ul>
+<pre>@Inject
+private IEventBroker eventBroker;
+...
+@Inject
+public MyPart(Composite parent) {
+	...
+	// async
+	eventBroker.post("demoCamp/nantes","Hello demo camp!");
+	// sync
+	eventBroker.send("demoCamp/nantes","Hello demo camp!");
+	...
+}</pre>
+		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: CSS Styling</h3>
+			<p class="center">
+				<img alt="dali" src="images/dali.jpg">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/photogaby/2860260345/">http://www.flickr.com/photos/photogaby/2860260345/</a>
+				by <a target="_blank" href="http://www.flickr.com/photos/photogaby/">_Fidelio_</a>
+			</div>
+		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: CSS Styling</h3>
+			<ul>
+				<li>Extension point!</li>
+			</ul>
+			<pre>
+&lt;extension
+	id="product"
+	point="org.eclipse.core.runtime.products"&gt;
+    &lt;product
+        name="demoCampNantes"
+        application="org.eclipse.e4.ui.workbench.swt.E4Application"&gt;
+		...
+        &lt;property
+		    name="applicationCSS"
+		    value="platform:/plugin/demoCampNantes/css/default.css"&gt;
+        &lt;/property&gt;
+    &lt;/product&gt;
+&lt;/extension&gt;
+			</pre>
+		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: CSS Styling at runtime!</h3>
+			<ul>
+				<li>CSS spy : <a href="http://download.eclipse.org/e4/downloads/drops/R-0.12-201206131100/repository/">e4 tools update site</a> </li>
+				<li>Shift-Alt-F4 (or ⇧⌥F4 for <a target="_blank" href="hippies.html">hippies</a>)
+			</ul>
+			<div class="center"><img alt="cssStyiling" src="images/cssStyling.png"  style="height: 70%;"></div>
+		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Compatibility layer</h3>
+			<p class="center">
+				<img alt="compatibiltiy" src="images/compat.jpg" style="height: 84%">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/rosipaw/4643095630/">http://www.flickr.com/photos/rosipaw/4643095630/</a>
+				by <a target="_blank" href="http://www.flickr.com/photos/rosipaw/">rosipaw</a>
+			</div>
+		</article>
+
+
+		<article class='nobackground'>
+			<q>Thank you!</q>
+		</article>
+
+	</section>
+
+</body>
+</html>
