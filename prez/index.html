@@ -10,11 +10,13 @@
            Charles Chen (ChromeVox support)
 
   URL: http://code.google.com/p/html5slides/
+  
+  ZBOUB!
 -->
 
 <html>
 <head>
-<title>Presentation</title>
+<title>Eclipse 4 for developers, cool new stuff</title>
 
 <meta charset='utf-8'>
 
@@ -59,25 +61,14 @@ body {
 </head>
 
 <style>
-/* Your individual styles here, or just use inline styles if that’s
-       what you want. */
 .center {
 	text-align: center
-}
-
-.yanone {
-	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 </style>
 
 <body style='display: none'>
 
 	<section class='slides layout-regular template-default'>
-
-		<!-- Your slides (<article>s) go here. Delete or comment out the
-           slides below. -->
-
-
 
 		<article class='nobackground'>
 			<h1 class="center yanone">
@@ -106,11 +97,14 @@ body {
 		<article class='nobackground'>
 			<h3 class="center">Eclipse 4: Application model</h3>
 			<ul>
-				<li>Structure of your app described by a model (i.e. Parts)</li>
+				<li>Structure of your app described by a model (i.e. Parts*)</li>
 				<li>But not the content of the Part (e.g. SWT widgets)</li>
 				<li>Arrange Parts using Perspectives, Stacks and Sashes</li>
-				<li>Connect the UI part through the Class URI</li>
+				<li>Connect the UI Part through the Class URI</li>
 			</ul>
+			<div class='source'>
+				*Part: View and/or Editor
+			</div>
 		</article>
 
 		<article class='nobackground'>
@@ -141,13 +135,13 @@ body {
 			<ul>
 				<li>POJO POJO POJO POJO POJO POJO
 					POJO POJO!!</li>
-				<li>@nnotations 
-<pre>// DI
-@Inject            @Named
-@Optional          @Preference
-// behavior @nnotations
-@PostConstruct     @PreDestroy
-@Execute           @Focus</pre>
+				<li>Annotations (an excerpt)
+<pre>		// DI
+		@Inject            @Named
+		@Optional          @Preference
+		// behavior @nnotations
+		@PostConstruct     @PreDestroy
+		@Execute           @Focus</pre>
 				</li>
 				<li>Eclipse RT injects values and maintains a context</li>
 
@@ -211,18 +205,15 @@ body {
 				<li>Subscribe</li>
 			</ul>
 			<pre>@Inject
-private IEventBroker eventBroker;
-...
-@PostConstruct
-public void postConstruct() {
-	...
-	eventBroker.subscribe("demoCamp/nantes", new EventHandler() {
-	      public void handleEvent(final Event event) {
-	    	  // handles the event
-	    	  Object obj = event.getProperty(IEventBroker.DATA)
-	    	  ...
-	      }
-	});
+@Optional
+void handleMessage(@UIEventTopic("demoCamp/nantes") String string) {
+	// do something
+}
+
+@Inject
+@Optional
+void handleMessage(@UIEventTopic("demoCamp/nantes") MyObject myObj) {
+	// do something else
 }</pre>
 		</article>
 
@@ -232,15 +223,19 @@ public void postConstruct() {
 				<li style="margin-top: 60px;">Publish</li>
 			</ul>
 <pre>@Inject
+@Optional
 private IEventBroker eventBroker;
-...
 @Inject
 public MyPart(Composite parent) {
 	...
+	MyObject myObj = new MyObject("Hello demo camp!")
+	Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();
+	map.put("publishing a string", "Hello demo camp!");
+	map.put("publishing an object", myObj);
 	// async
-	eventBroker.post("demoCamp/nantes","Hello demo camp!");
+	eventBroker.post("demoCamp/nantes", map);
 	// sync
-	eventBroker.send("demoCamp/nantes","Hello demo camp!");
+	eventBroker.send("demoCamp/nantes", map);
 	...
 }</pre>
 		</article>
@@ -277,16 +272,71 @@ public MyPart(Composite parent) {
     &lt;/product&gt;
 &lt;/extension&gt;
 			</pre>
+			<div class='source'>
+				Find out more: <a target="_blank"
+					href="http://www.eclipsecon.org/2012/sites/eclipsecon.org.2012/files/2012-EclipseCon-CSS.pdf">http://www.eclipsecon.org/.../2012-EclipseCon-CSS.pdf</a>
+				by <a target="_blank" href="https://twitter.com/#!/delaweeza">@delaweeza</a>
+			</div>
+			
+		</article>
+		
+				<article class='nobackground'>
+			<h3 class="center">Eclipse 4: CSS Styling</h3>
+			<ul>
+				<li>Some CSS</li>
+			</ul>
+<pre>// scoping through workbench model MParts
+.MTrimmedWindow Text, .MWindow Text {
+	color: ‘white’;
+	background-color: ‘black’;
+}</pre>
+			<div class='source'>
+				Find out more: <a target="_blank"
+					href="http://www.eclipsecon.org/2012/sites/eclipsecon.org.2012/files/2012-EclipseCon-CSS.pdf">http://www.eclipsecon.org/.../2012-EclipseCon-CSS.pdf</a>
+				by <a target="_blank" href="https://twitter.com/#!/delaweeza">@delaweeza</a>
+			</div>
+			
 		</article>
 		
 		<article class='nobackground'>
 			<h3 class="center">Eclipse 4: CSS Styling at runtime!</h3>
 			<ul>
 				<li>CSS spy : <a href="http://download.eclipse.org/e4/downloads/drops/R-0.12-201206131100/repository/">e4 tools update site</a> </li>
-				<li>Shift-Alt-F4 (or ⇧⌥F4 for <a target="_blank" href="hippies.html">hippies</a>)
+				<li>Shift-Alt-F4 (or ⇧⌥F4 for <a target="_blank" href="hippies.html">hippies</a>)</li>
 			</ul>
 			<div class="center"><img alt="cssStyiling" src="images/cssStyling.png"  style="height: 70%;"></div>
 		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Renderers</h3>
+			<p class="center">
+				<img alt="prism" src="images/prism.jpg" style="width: 84%;">
+			</p>
+			<div class='source'>
+				Source: <a target="_blank"
+					href="http://www.flickr.com/photos/shazoor/4813943143/">http://www.flickr.com/photos/shazoor/4813943143/</a>
+				by <a target="_blank"
+					href="http://www.flickr.com/photos/shazoor/">Shazoor Mirza</a>
+			</div>
+		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: CSS Styling at runtime!</h3>
+			<p>Use your favorite UI tooklit</p>
+			<ul>
+				<li>JavaFX 2</li>
+				<li>Swing</li>
+				<li>Awt <img alt="troll" src="images/trollFace.jpg" style="display: inline-block; width: 5%;"></li>
+				<li>Your exotic UI toolkit</li>
+			</ul>
+			<div class='source'>
+				Find out more: <a target="_blank"
+					href="http://tomsondev.files.wordpress.com/2012/03/fx_clipse.pdf">http://tomsondev.files.wordpress.com/.../fx_clipse.pdf</a>
+				by <a target="_blank" href="https://twitter.com/#!/tomsontom/">@tomsontom</a>
+			</div>
+		</article>
+		
+		
 		
 		<article class='nobackground'>
 			<h3 class="center">Eclipse 4: Compatibility layer</h3>
