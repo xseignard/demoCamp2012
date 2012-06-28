@@ -3,7 +3,19 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_UD61vZR_EeGse6OvQVaO5g" label="demo.camp" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_UD7cxJR_EeGse6OvQVaO5g">
       <children xsi:type="advanced:Perspective" xmi:id="_UD7cxZR_EeGse6OvQVaO5g">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_UD7cxpR_EeGse6OvQVaO5g" horizontal="true"/>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_UD7cxpR_EeGse6OvQVaO5g" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_z9frkMEPEeGZ0YX9uafRNQ" elementId="demo.camp.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_1nE4gMEPEeGZ0YX9uafRNQ" elementId="myPart1" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart1" label="MyPart1"/>
+          </children>
+          <children xsi:type="basic:PartSashContainer" xmi:id="__7QeEMEPEeGZ0YX9uafRNQ" elementId="">
+            <children xsi:type="basic:PartStack" xmi:id="_BZy4oMEQEeGZ0YX9uafRNQ" elementId="">
+              <children xsi:type="basic:Part" xmi:id="_EuzsoMEQEeGZ0YX9uafRNQ" elementId="myPart2" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart2" label="MyPart2"/>
+            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_B4F-MMEQEeGZ0YX9uafRNQ" elementId="demo.camp.partstack.0">
+              <children xsi:type="basic:Part" xmi:id="_GM9FoMEQEeGZ0YX9uafRNQ" elementId="myPart3" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart3" label="MyPart3"/>
+            </children>
+          </children>
+        </children>
       </children>
     </children>
     <mainMenu xmi:id="_UD61vpR_EeGse6OvQVaO5g" elementId="menu:org.eclipse.ui.main.menu">
@@ -20,6 +32,7 @@
       <children xsi:type="menu:ToolBar" xmi:id="_UD7cyZR_EeGse6OvQVaO5g" elementId="toolbar:org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_UD7cypR_EeGse6OvQVaO5g" iconURI="platform:/plugin/demo.camp/icons/sample.gif" command="_UD61tJR_EeGse6OvQVaO5g"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_UD7cy5R_EeGse6OvQVaO5g" iconURI="platform:/plugin/demo.camp/icons/save_edit.gif" command="_UD61t5R_EeGse6OvQVaO5g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nBPsAMEZEeGZ0YX9uafRNQ" elementId="" iconURI="platform:/plugin/demo.camp/icons/bell.png" command="_bC6RwMEZEeGZ0YX9uafRNQ"/>
       </children>
     </trimBars>
   </children>
@@ -27,6 +40,7 @@
   <handlers xmi:id="_UD61tZR_EeGse6OvQVaO5g" contributionURI="bundleclass://demo.camp/demo.camp.handlers.OpenHandler" command="_UD61tJR_EeGse6OvQVaO5g"/>
   <handlers xmi:id="_UD61uJR_EeGse6OvQVaO5g" contributionURI="bundleclass://demo.camp/demo.camp.handlers.SaveHandler" command="_UD61t5R_EeGse6OvQVaO5g"/>
   <handlers xmi:id="_UD61u5R_EeGse6OvQVaO5g" contributionURI="bundleclass://demo.camp/demo.camp.handlers.AboutHandler" command="_UD61upR_EeGse6OvQVaO5g"/>
+  <handlers xmi:id="_fa8B8MEZEeGZ0YX9uafRNQ" elementId="" contributionURI="bundleclass://demo.camp/demo.camp.handlers.BrokerHandler" command="_bC6RwMEZEeGZ0YX9uafRNQ"/>
   <bindingTables xmi:id="_UD61spR_EeGse6OvQVaO5g" bindingContext="_UD6OoZR_EeGse6OvQVaO5g">
     <bindings xmi:id="_UD61s5R_EeGse6OvQVaO5g" keySequence="Ctrl+Q" command="_UD61sJR_EeGse6OvQVaO5g"/>
     <bindings xmi:id="_UD61tpR_EeGse6OvQVaO5g" keySequence="Ctrl+O" command="_UD61tJR_EeGse6OvQVaO5g"/>
@@ -41,6 +55,7 @@
   <commands xmi:id="_UD61tJR_EeGse6OvQVaO5g" elementId="demo.camp.openCommand" commandName="openCommand"/>
   <commands xmi:id="_UD61t5R_EeGse6OvQVaO5g" elementId="demo.camp.saveCommand" commandName="saveCommand"/>
   <commands xmi:id="_UD61upR_EeGse6OvQVaO5g" elementId="demo.camp.aboutCommand" commandName="aboutCommand"/>
+  <commands xmi:id="_bC6RwMEZEeGZ0YX9uafRNQ" elementId="demo.camp.command.message" commandName="brokerCommand"/>
   <addons xmi:id="_UD6OpJR_EeGse6OvQVaO5g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_UD6OpZR_EeGse6OvQVaO5g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_UD6OppR_EeGse6OvQVaO5g" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

@@ -236,14 +236,8 @@ body {
 			</ul>
 			<pre>@Inject
 @Optional
-void handleMessage(@UIEventTopic("demoCamp/nantes") String string) {
+void handleMessage(@UIEventTopic("demoCamp/nantes") Object obj) {
 	// do something
-}
-
-@Inject
-@Optional
-void handleMessage(@UIEventTopic("demoCamp/nantes") MyObject myObj) {
-	// do something else
 }</pre>
 		</article>
 
@@ -255,17 +249,14 @@ void handleMessage(@UIEventTopic("demoCamp/nantes") MyObject myObj) {
 <pre>@Inject
 @Optional
 private IEventBroker eventBroker;
-@Inject
-public MyPart(Composite parent) {
+...
+@Execute
+public void execute() {
 	...
-	MyObject myObj = new MyObject("Hello demo camp!")
-	Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();
-	map.put("publishing a string", "Hello demo camp!");
-	map.put("publishing an object", myObj);
 	// async
-	eventBroker.post("demoCamp/nantes", map);
+	eventBroker.post("demoCamp/nantes", "Hello demo camp!");
 	// sync
-	eventBroker.send("demoCamp/nantes", map);
+	eventBroker.send("demoCamp/nantes", "Hello demo camp!");
 	...
 }</pre>
 		</article>
@@ -332,7 +323,7 @@ public MyPart(Composite parent) {
 			<h3 class="center">Eclipse 4: CSS Styling at runtime!</h3>
 			<ul>
 				<li>CSS spy : <a href="http://download.eclipse.org/e4/downloads/drops/R-0.12-201206131100/repository/">e4 tools update site</a> </li>
-				<li>Shift-Alt-F4 (or ⇧⌥F4 for <a target="_blank" href="hippies.html">hippies</a>)</li>
+				<li>Shift-Alt-F4 (or ⇧⌥F4 for <a target="_blank" href="hipsters.html">hipsters</a>)</li>
 			</ul>
 			<div class="center"><img alt="cssStyiling" src="images/cssStyling.png"  style="height: 70%;"></div>
 		</article>
@@ -351,7 +342,7 @@ public MyPart(Composite parent) {
 		</article>
 		
 		<article class='nobackground'>
-			<h3 class="center">Eclipse 4: CSS Styling at runtime!</h3>
+			<h3 class="center">Eclipse 4: Renderers</h3>
 			<p>Use your favorite UI tooklit</p>
 			<ul>
 				<li>JavaFX 2</li>
@@ -364,6 +355,17 @@ public MyPart(Composite parent) {
 					href="http://tomsondev.files.wordpress.com/2012/03/fx_clipse.pdf">http://tomsondev.files.wordpress.com/.../fx_clipse.pdf</a>
 				by <a target="_blank" href="https://twitter.com/#!/tomsontom/">@tomsontom</a>
 			</div>
+		</article>
+		
+		<article class='nobackground'>
+			<h3 class="center">Eclipse 4: Renderers</h3>
+			<p>Extend the application model with your own business Parts</p>
+			<ul>
+				<li><a target="_blank" href="http://www.vogella.com/articles/Eclipse4Modularity/article.html">Eclipse 4 Modularity</a></li>
+				<li><a target="_blank" href="http://www.vogella.com/articles/Eclipse4ExtendModel/article.html">Eclipse 4 Extend Model</a></li>
+			</ul>
+			<p>by <a target="_blank" href="http://www.twitter.com/#!/vogella">@vogella</a></p>
+			
 		</article>
 		
 		
