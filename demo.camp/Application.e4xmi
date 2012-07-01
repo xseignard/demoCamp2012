@@ -3,16 +3,16 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_UD61vZR_EeGse6OvQVaO5g" label="demo.camp" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_UD7cxJR_EeGse6OvQVaO5g">
       <children xsi:type="advanced:Perspective" xmi:id="_UD7cxZR_EeGse6OvQVaO5g">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_UD7cxpR_EeGse6OvQVaO5g" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_z9frkMEPEeGZ0YX9uafRNQ" elementId="demo.camp.partstack.0">
-            <children xsi:type="basic:Part" xmi:id="_1nE4gMEPEeGZ0YX9uafRNQ" elementId="myPart1" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart1" label="MyPart1"/>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_Pp4AUMFCEeGLuYNDB98mmA" elementId="demo.camp.partsashcontainer.0" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_SGz80MFCEeGLuYNDB98mmA" elementId="demo.camp.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_Wx4k0MFCEeGLuYNDB98mmA" elementId="id1" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart1" label="1"/>
           </children>
-          <children xsi:type="basic:PartSashContainer" xmi:id="__7QeEMEPEeGZ0YX9uafRNQ" elementId="">
-            <children xsi:type="basic:PartStack" xmi:id="_BZy4oMEQEeGZ0YX9uafRNQ" elementId="">
-              <children xsi:type="basic:Part" xmi:id="_EuzsoMEQEeGZ0YX9uafRNQ" elementId="myPart2" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart2" label="MyPart2"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_b10_0MFCEeGLuYNDB98mmA" elementId="demo.camp.partsashcontainer.0">
+            <children xsi:type="basic:PartStack" xmi:id="_dFU40MFCEeGLuYNDB98mmA" elementId="demo.camp.partstack.0">
+              <children xsi:type="basic:Part" xmi:id="_fdCXEMFCEeGLuYNDB98mmA" elementId="id2" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart2" label="2"/>
             </children>
-            <children xsi:type="basic:PartStack" xmi:id="_B4F-MMEQEeGZ0YX9uafRNQ" elementId="demo.camp.partstack.0">
-              <children xsi:type="basic:Part" xmi:id="_GM9FoMEQEeGZ0YX9uafRNQ" elementId="myPart3" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart3" label="MyPart3"/>
+            <children xsi:type="basic:PartStack" xmi:id="_dauhEMFCEeGLuYNDB98mmA" elementId="demo.camp.partstack.0">
+              <children xsi:type="basic:Part" xmi:id="_eAaBAMFCEeGLuYNDB98mmA" elementId="id3" contributionURI="bundleclass://demo.camp/demo.camp.parts.MyPart3" label="3"/>
             </children>
           </children>
         </children>
